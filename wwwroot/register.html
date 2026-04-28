@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">    
+    <head>
+       <meta charset="UTF-8">
+       <title>Меню</title>
+       <style>
+            body {
+                background-color: #505050;
+                color: #d4d4d4;
+                }
+        </style>
+    </head>
+    <body>
+        <h1>Регистрация</h1>
+        <div>
+            <span>Имя пользователя</span><br><br>
+            <input type="text" id="inputUserName"><br><br>
+            <span>Пароль</span><br><br>
+            <input type="password" id="inputUserPassword"><br><br>
+            <button onclick="sendRegisterDataToServer()" id="sendDataToServerBtn">Зарегестрироваться</button> <br>
+            <span id="registerMessage"></span>
+
+        </div>
+        <button onclick="window.location.href='index.html'">Вернуться</button>
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Пост</title>
+    <style>
+        body {
+            background-color: #505050;
+            color: #d4d4d4;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="postData">
+        <h1 id="postName"></h1>
+        <span id="postGlobalContent"></span>
+        <script src="script.js"></script>
+    </div>
+    <br><button onclick="deletePost()">Удалить пост</button>
+    <div>
+        <br><br>
+        <span>Добавить комментарий</span><br>
+        <input id="commentContent" type="text" oninput="checkCommentLength()" placeholder="Введите комментарий"> 
+        <input id="commentUserId" type="number" oninput="checkCommentLength()" size="2" placeholder="Id">
+        <button id="addComemntBtn" onclick="addComment()" disabled>Добавить комментарий</button>
+        <span id="ifAdded"></span>
+    </div>
+    <br><span id="commentsCount">Комментарии</span>
+    <ul id="comments"></ul>
+    <button onclick="window.location.href='posts.html'">Вернуться</button>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">    
+    <head>
+       <meta charset="UTF-8">
+       <title>Добавление</title>
+       <style>
+            body {
+                background-color: #505050;
+                color: #d4d4d4;
+                }
+        </style>
+    </head>
+    <body>
+        <input type="text" id="newPostName" oninput="checkData()" placeholder="Введите текст"> <span>Название поста</span><br><br>
+        <input type="text" id="newPostVisualContent" oninput="checkData()" placeholder="Введите текст"> <span>Краткое содержание поста</span><br><br>
+        <input type="text" id="newPostGlobalContent" oninput="checkData()" placeholder="Введите текст"> <span>Описание поста</span><br><br>
+        <input type="number" min="0" id="newPostUserId" oninput="checkData()" placeholder="Введите текст"> <span>Уникальный ID автора поста</span><br><br>
+        <button id="addPostButton" onclick="addPost()" disabled>Добавить пост</button>
+        <br><br><button onclick="window.location.href='index.html'">Вернуться</button>
+        <br><br><span id="ifAdded"></span>
+        <script src="script.js"></script>
+    </body>
+</html>
