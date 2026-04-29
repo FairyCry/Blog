@@ -24,8 +24,9 @@ function renderUserList(userList) {
     container.innerHTML = '';
     for (const user of userList) {
         container.innerHTML += `
-            <a href='account.html?id=${user.id}'><h1>${user.name}</h1></a> <button data-id=${user.id} onclick="deleteUser(this)">удалить учетную запись</button>
-            <br><i>Уникальный ID${user.id}</i>
+        <a href='account.html?id=${user.id}'><h1>${user.name}</h1></a> 
+        <br><i>Уникальный ID${user.id}</i>
+        <br><br><button data-id=${user.id} onclick="deleteUser(this)">удалить учетную запись</button>
             <br><br>
         `;
     }
