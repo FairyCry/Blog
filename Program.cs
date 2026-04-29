@@ -68,26 +68,28 @@ app.MapPost("/addPost", async (AppDbContext db, AddPostRequest request) =>
     db.Posts.Add(post);
     await db.SaveChangesAsync();
     Console.WriteLine("Добавил");
-    return Results.Ok();
+    return Results.Ok("Добавление прошло успешно");
 });
 app.MapGet("/getPost", async (AppDbContext db, int postId) =>
 {
     Console.WriteLine($"значение для поиска id {postId}");
-
     var post = await db.Posts
     .Include(p => p.User)
     .Include(p => p.Comments)
-    .ThenInclude(c => c.User)
+        .ThenInclude(c => c.User)
     .FirstOrDefaultAsync(p => p.Id == postId);
 
-    if (post == null)
+    if (post != null)
+    {
+        Console.WriteLine($"Получен пост: {post.PostName}, Уникальный ID: {post.Id}");
+        return Results.Ok(post);
+    }
+    else
     {
         return Results.NotFound();
     }
-    Console.WriteLine(post.PostName);
-    return Results.Json(post);
 });
-app.MapGet("/deletePost", async (AppDbContext db, int id) =>
+app.MapDelete("/deletePost", async (AppDbContext db, int id) =>
 {
     var post = await db.Posts.FirstOrDefaultAsync(p => p.Id == id);
     if (post != null)

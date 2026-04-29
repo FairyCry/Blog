@@ -153,7 +153,7 @@ async function addComment() {
 async function deletePost() {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
-    const response = await fetch(`/deletePost?id=${id}`)
+    const response = await fetch(`/deletePost?id=${id}`, { method: 'DELETE' })
     window.location.href = 'posts.html'
 }
 async function addPost() {
